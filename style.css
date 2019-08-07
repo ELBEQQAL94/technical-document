@@ -1,0 +1,103 @@
+/* Global Style */
+html, body {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+/* our container */
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 112px 1fr 50px;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    padding: 17px;
+    text-align: center;
+    background-color: yellow
+}
+
+.sidenav {
+    grid-area: sidenav;
+    overflow-y: scroll;
+    padding: 15px
+}
+
+.sidenav .sections ul {
+   list-style: none;
+}
+
+.sidenav .sections ul li {
+    border: 1px dashed darkorange;
+    padding: 5px 10px;
+    transition: all .7s linear;
+    margin-top: 20px
+}
+
+.sidenav .sections ul li:hover {
+    background-color: black;
+}
+
+.sidenav .sections ul li a {
+    text-decoration: none;
+    color: black
+}
+
+.sidenav .sections ul li a:hover {
+    color: yellow
+}
+
+.main {
+    grid-area: main;
+    padding: 17px;
+}
+
+.main .item {
+    color: grey;
+}
+.main .item h2 {
+    font-weight: bold;
+    margin: 2em;
+    font-size: 1.7em;
+    color: black
+}
+
+.main .item p {
+    line-height: 1.2;
+    font-size: 18px
+}
+
+.main .code {
+    background-color: black;
+    border: 2px solid;
+    color: #fff;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* responsive design */
+@media (max-width: 569px){
+    .container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 112px 1fr 50px;
+        grid-template-areas:
+          "header header"
+          "sidenav sidenav"
+          "main main"
+          "footer footer";
+        height: 100vh;
+    }
+    
+}
